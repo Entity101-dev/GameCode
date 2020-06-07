@@ -9,7 +9,7 @@ args = parser.parse_args()
 
 serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try: 
-	serv.bind((args.host, args.port))
+	serv.bind(("0.0.0.0", 8080))
 	serv.listen(5)
 except Exception as e:
 	raise SystemExit(f"We could not bind the server on host: {args.host} to port: {args.port}, because: {e}")
